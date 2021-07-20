@@ -3,21 +3,21 @@ include_once 'business.class.php';
 class View{
     public static function  start($title, $loadCss){
         $html = "<!DOCTYPE html>
-<html>
-<head>
-<meta charset=\"utf-8\">";
+        <html>
+        <head>
+        <meta charset=\"utf-8\">";
+        
+        if($loadCss == 0){
+            $html = $html."<link rel=\"stylesheet\" type=\"text/css\" href=\"estilos.css\">";
+        }elseif($loadCss == 1){
+            $html = $html."<link rel=\"stylesheet\" type=\"text/css\" href=\"../estilos.css\">";
+        }
 
-if($loadCss == 0){
-    $html = $html."<link rel=\"stylesheet\" type=\"text/css\" href=\"estilos.css\">";
-}elseif($loadCss == 1){
-    $html = $html."<link rel=\"stylesheet\" type=\"text/css\" href=\"../estilos.css\">";
-}
-
-
-$html = $html."<script src=\"scripts.js\"></script>
-<title>$title</title>
-</head>
-<body>";
+        
+        $html = $html."<script src=\"scripts.js\"></script>
+        <title>$title</title>
+        </head>
+        <body>";
         User::session_start();
         echo $html;
     }

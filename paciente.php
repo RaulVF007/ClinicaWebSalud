@@ -42,13 +42,18 @@ if (isset($_SESSION['user'])){
         foreach($datos as $dato){
             
             echo"<form method='POST'>";
+            $idpaciente = $id;
+            $idespecialista = $dato['id'];
+            echo "<tr id=fila$id>";
             echo "<input type= 'hidden' name = 'id_especialista' value = '{$dato['id']}'>";
             echo "<td>{$dato['especialidad']}</td>";
             echo "<input type= 'hidden' name = 'especialidad' value = '{$dato['especialidad']}'>";
+            $nombre = $dato['nombre'];
             echo "<td>{$dato['nombre']}</td>";
             echo "<td>{$dato['email']}</td>";
             echo "<td>{$dato['telefono']}</td>";
-            echo "<td><input type='submit' value='Seleccionar o cambiar especialista' name='cambiar'></td>";
+            echo "<td><input type='submit' value='Seleccionar o cambiar especialista' name='cambiar'>
+                    <input type='submit' onclick=\"borrarEspecialista($id, $idespecialista)\" value='Borrar'> </td>";
             echo "</tr>";
             echo "</form>";
         }
@@ -59,7 +64,7 @@ if (isset($_SESSION['user'])){
 }else {
     header("Location: ./index.php");
 }
-
+echo '<script src="scripts.js"></script>';
 View::footer();
 
 View::end();

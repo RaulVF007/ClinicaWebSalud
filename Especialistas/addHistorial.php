@@ -39,7 +39,7 @@ if(isset($_POST['enviar'])){
             
         if($user['tipo'] == 2){
             LoggedView::navigation(2, 1);
-             echo "<form method='POST'>
+            echo "<form onsubmit=\"return validateHistoryEntry();\" method=\"post\" id=\"formulario\">
                 <label>Fecha</label>
                     <input type='date' name='fecha' required><br>
                 <label>Hora</label>
@@ -54,16 +54,18 @@ if(isset($_POST['enviar'])){
                         <option value='5'>Resultado prueba</option>
                     </select><br>
                 <label>Asunto</label>    
-                    <input type='text' name='asunto' required minlength='1' maxlength='32'><br>
+                    <input type='text' name='asunto' id='asunto' minlength='1' maxlength='32'><br>
                 <label>Descripción</label>
-                    <textarea name='descripcion' placeholder='Escribe aqui todos los detalles'></textarea><br>  
-                    <input type='submit' name='enviar' value='enviar'>
+                    <textarea name='descripcion' id='descripcion' maxlength='5000' minlength='12' placeholder='Escribe aqui todos los detalles'></textarea><br>  
+                    <input type='submit' name='enviar' value='Enviar'>
                     <input type='reset' value='Borrar'>
-            </form>";       
+            </form>";   
+            echo "<p id='error' class='error'></p>";
+            echo "<p id='error2' class='error'></p>";
         } 
     }
 }       
-
+echo '<script src="../scripts.js"></script>';
 View::footer();
 
 View::end(); 
