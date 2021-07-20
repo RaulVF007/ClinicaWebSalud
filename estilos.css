@@ -1,0 +1,111 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #0AC1D6;
+  border-radius: 5px;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #09D3ED;
+  opacity: 0.8;
+}
+
+.btn-login {
+    float: right;
+    background-color: #0AAFC4;
+}
+
+body {
+    background-color: #DEF1F1;
+    margin: 25px 50px 25px;
+}
+
+img {
+    border-radius: 5px;
+    display: block;
+    margin: 10px auto 10px;
+}
+
+h1{
+    font-family: "Moncao", Monospace;
+}
+
+h2{
+    font-family: "Moncao", Monospace;
+}
+
+h3 {
+    font-family: "Moncao", Monospace;
+    text-align: center;
+    font-size: 1em;
+}
+
+h4 {
+    font-family: "Moncao", Monospace;
+}
+
+p {
+    font-family: "Moncao", Monospace;
+}
+
+input[type=text] {
+  border: 2px solid #079292;
+  border-radius: 3px;
+  transition: width 0.2s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 30%;
+}
+
+input[type=password] {
+  border: 2px solid #079292;
+  border-radius: 3px;
+  transition: width 0.2s ease-in-out;
+}
+
+input[type=password]:focus {
+    width: 30%;
+}
+
+form {
+    border: none;
+    margin: 10px 20px 10px;
+}
+
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    border-radius: 2px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+th {
+    border: 1px solid black;
+    background-color: #0AB8CC;
+}
+
+td {
+    background-color: #CEEEF1;
+    border: 1px solid #0AABBE;
+}
+
+input[type=submit] {
+    background-color: #D7DADA;
+    border: 1px solid blue;
+}
